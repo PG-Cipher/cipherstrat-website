@@ -1,0 +1,190 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Contact" description="Start a conversation with Cipher Strategic. No fluff. Just a conversation.">
+
+  <section class="contact-page">
+    <div class="container">
+
+      <div class="contact-grid">
+
+        <!-- LEFT: Intro -->
+        <div class="contact-intro">
+          <span class="label">Contact</span>
+          <h1>No fluff.<br />Just a conversation.</h1>
+          <p>
+            Tell us where you are and what you're trying to solve. We'll tell you honestly whether we can help — and if we can't, we'll point you in the right direction.
+          </p>
+          <div class="contact-email">
+            <span class="label" style="margin-bottom: 0.4rem;">Direct</span>
+            <a href="mailto:hello@cipherstrat.tech">hello@cipherstrat.tech</a>
+          </div>
+        </div>
+
+        <!-- RIGHT: Form -->
+        <div class="contact-form-wrap">
+          <form
+            action="https://formspree.io/f/mjgpypvn"
+            method="POST"
+            class="contact-form"
+          >
+            <div class="field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your name"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Your company"
+              />
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="you@yourcompany.com"
+                required
+              />
+            </div>
+
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                placeholder="What are you working on? What's the challenge?"
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn submit-btn">Send Message</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .contact-page {
+    min-height: 100vh;
+    padding: 160px 0 80px;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  /* INTRO */
+  .contact-intro h1 {
+    font-size: clamp(2rem, 4.5vw, 3.2rem);
+    margin: 1rem 0 1.5rem;
+    line-height: 1.1;
+  }
+
+  .contact-intro p {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.85;
+    margin-bottom: 2.5rem;
+  }
+
+  .contact-email {
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .contact-email a {
+    font-size: 0.95rem;
+    color: var(--text);
+    transition: color 0.2s;
+  }
+
+  .contact-email a:hover {
+    color: var(--accent);
+  }
+
+  /* FORM */
+  .contact-form-wrap {
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+  }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  input,
+  textarea {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: inherit;
+    font-size: 0.9rem;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.2s;
+    resize: vertical;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--muted);
+    opacity: 0.6;
+  }
+
+  input:focus,
+  textarea:focus {
+    border-color: var(--accent);
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 800px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  }
+</style>

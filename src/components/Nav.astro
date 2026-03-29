@@ -1,0 +1,193 @@
+---
+const path = Astro.url.pathname;
+const links = [
+  { href: '/', label: 'Home' },
+  { href: '/services', label: 'Services' },
+  { href: '/about', label: 'About' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<header>
+  <nav class="container">
+    <a href="/" class="logo">
+      <img src="/cipher_strategic_mark_dark.svg" alt="Cipher Strategic mark" class="logo-mark" />
+      <div class="logo-text">
+        <span class="logo-cipher">CIPHER</span>
+        <span class="logo-strat">S T R A T E G I C</span>
+      </div>
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <span></span><span></span><span></span>
+    </button>
+    <ul id="navLinks">
+      {links.map(link => (
+        <li>
+          <a
+            href={link.href}
+            class={path === link.href || (link.href !== '/' && path.startsWith(link.href)) ? 'active' : ''}
+          >
+            {link.label}
+          </a>
+        </li>
+      ))}
+      <li><a href="/contact" class="nav-cta">Work With Us</a></li>
+    </ul>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle?.addEventListener('click', () => {
+    links?.classList.toggle('open');
+    toggle.classList.toggle('open');
+  });
+</script>
+
+<style>
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: rgba(26, 31, 46, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+    gap: 2rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-shrink: 0;
+  }
+
+  .logo-mark {
+    height: 40px;
+    width: 40px;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 3px;
+  }
+
+  .logo-cipher {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .logo-strat {
+    font-size: 0.42rem;
+    font-weight: 400;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    list-style: none;
+  }
+
+  ul a {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding: 0.4rem 0.75rem;
+    transition: color 0.2s;
+  }
+
+  ul a:hover,
+  ul a.active {
+    color: var(--text);
+  }
+
+  .nav-cta {
+    background: var(--accent);
+    color: #fff !important;
+    padding: 0.45rem 1rem !important;
+    margin-left: 0.5rem;
+    transition: opacity 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    opacity: 0.85;
+    color: #fff !important;
+  }
+
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+  }
+
+  .nav-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--text);
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .nav-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-toggle.open span:nth-child(2) { opacity: 0; }
+  .nav-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 700px) {
+    .nav-toggle { display: flex; }
+
+    ul {
+      display: none;
+      position: absolute;
+      top: 68px;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      align-items: stretch;
+      background: #1a1f2e;
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      gap: 0;
+    }
+
+    ul.open { display: flex; }
+
+    ul a {
+      display: block;
+      padding: 0.85rem 2rem;
+      font-size: 0.72rem;
+    }
+
+    .nav-cta {
+      margin: 0.75rem 2rem 0 !important;
+      text-align: center;
+    }
+  }
+</style>

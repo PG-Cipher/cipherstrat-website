@@ -1,0 +1,82 @@
+---
+---
+
+<footer>
+  <div class="container">
+    <a href="/" class="logo">
+      <img src="/cipher_strategic_mark_dark.svg" alt="Cipher Strategic mark" class="logo-mark" />
+      <div class="logo-text">
+        <span class="logo-cipher">CIPHER</span>
+        <span class="logo-strat">S T R A T E G I C</span>
+      </div>
+    </a>
+    <p class="tagline">Technology &middot; AI &middot; Strategy</p>
+    <p class="copy">&copy; {new Date().getFullYear()} Cipher Strategic. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 3rem 0;
+    margin-top: 0;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    text-align: center;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .logo-mark {
+    height: 44px;
+    width: 44px;
+    border-radius: 8px;
+    display: block;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 3px;
+  }
+
+  .logo-cipher {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    color: var(--text);
+  }
+
+  .logo-strat {
+    font-size: 0.42rem;
+    font-weight: 400;
+    letter-spacing: 0.38em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .tagline {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .copy {
+    font-size: 0.72rem;
+    color: var(--muted);
+    margin-top: 0.25rem;
+  }
+</style>

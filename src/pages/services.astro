@@ -1,0 +1,212 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    title: 'IT Consulting',
+    description: 'Technology should serve your business — not the other way around. We design and implement the right technology aligned to your actual goals. We bridge the gap between business outcomes and technical execution, cutting through vendor noise to find what actually works for your size, your team, and your budget.',
+    bullets: [
+      'Technology assessments and gap analysis',
+      'System design and implementation planning',
+      'Vendor selection and contract review',
+      'IT strategy aligned to business objectives',
+    ],
+  },
+  {
+    title: 'Hardware & Network Procurement',
+    description: 'Cisco-certified expertise means we know the gear. We source and specify the right infrastructure for your environment — servers, networking, endpoints — at the right price. We don\'t have preferred vendor arrangements. We spec what fits, not what pays us the best margin.',
+    bullets: [
+      'Infrastructure design and specification',
+      'Cisco-certified network procurement',
+      'Hardware lifecycle planning',
+      'Competitive sourcing and price validation',
+    ],
+  },
+  {
+    title: 'Advisory Services',
+    description: 'Most technology roadmaps are built around what exists today. We build them around where your business is headed. We help you plan technology investment over a 12–36 month horizon — so you\'re not reactive, you\'re ready. Budget-aligned, business-driven, and built to last past the next quarter.',
+    bullets: [
+      'Multi-year technology roadmapping',
+      'IT budgeting and capital planning',
+      'Board and executive-level technology briefings',
+      'M&A technology due diligence',
+    ],
+  },
+  {
+    title: 'Security Consulting',
+    description: 'We provide strategic security counsel — not a product to sell you and not a contract to lock you into. We assess your actual risk exposure, evaluate your current controls, and give you an honest read on where you\'re vulnerable and what to do about it. No monitoring services. No upsell. Just clear analysis and actionable recommendations.',
+    bullets: [
+      'Risk assessment and threat modeling',
+      'Vulnerability evaluation and prioritization',
+      'Security framework recommendations (NIST, CIS, ISO)',
+      'Policy review and security program design',
+    ],
+  },
+  {
+    title: 'AI Strategy',
+    description: 'The AI conversation is loud and full of bad advice. We cut through it. We identify where AI creates genuine operational leverage for your business, evaluate the tools and vendors worth your attention, and build a practical adoption roadmap you can actually execute. We\'re not here to sell you a platform. We\'re here to tell you what\'s real.',
+    bullets: [
+      'AI opportunity assessment by business function',
+      'Tool and vendor evaluation',
+      'Build vs. buy analysis',
+      'Adoption roadmap and change management planning',
+    ],
+  },
+];
+---
+
+<Layout title="Services" description="IT consulting, security, AI strategy, and advisory services from Cipher Strategic — honest advice, no vendor relationships.">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="label">Services</span>
+      <h1>Five practice areas.<br />One commitment.</h1>
+      <p class="subhead">We don't do everything. We do the things that matter most — and we do them well.</p>
+    </div>
+  </section>
+
+  <!-- SERVICE BLOCKS -->
+  <section class="services">
+    <div class="container">
+      {services.map((s, i) => (
+        <div class="service-block">
+          <div class="service-number">0{i + 1}</div>
+          <div class="service-content">
+            <h2>{s.title}</h2>
+            <p class="service-desc">{s.description}</p>
+            <ul class="service-bullets">
+              {s.bullets.map(b => (
+                <li><span class="bullet-mark">—</span>{b}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- BOTTOM CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <span class="label">Get Started</span>
+          <h2>Not sure where to start?<br />We'll figure it out together.</h2>
+        </div>
+        <a href="/contact" class="btn">Contact Us</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    padding: 160px 0 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-bottom: 1.25rem;
+    max-width: 600px;
+  }
+
+  .subhead {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 480px;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 5rem 0;
+  }
+
+  .service-block {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 2rem;
+    padding: 3.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .service-block:last-child {
+    border-bottom: none;
+  }
+
+  .service-number {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    padding-top: 0.35rem;
+  }
+
+  .service-content h2 {
+    font-size: 1.7rem;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+  }
+
+  .service-desc {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.85;
+    max-width: 640px;
+    margin-bottom: 2rem;
+  }
+
+  .service-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .service-bullets li {
+    font-size: 0.875rem;
+    color: var(--text);
+    display: flex;
+    gap: 0.75rem;
+    align-items: baseline;
+  }
+
+  .bullet-mark {
+    color: var(--accent);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  /* CTA */
+  .cta-strip {
+    padding: 5rem 0;
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .cta-strip h2 {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 700px) {
+    .service-block {
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+
+    .cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

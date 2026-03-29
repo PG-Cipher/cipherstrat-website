@@ -1,0 +1,312 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const values = [
+  {
+    title: 'Independence',
+    body: 'We don\'t sell software. We don\'t take commissions. We don\'t have preferred vendor relationships. Our only obligation is to you.',
+  },
+  {
+    title: 'Precision',
+    body: 'Strategy without specificity is just talk. We deliver recommendations you can execute — with timelines, costs, and tradeoffs named.',
+  },
+  {
+    title: 'Candor',
+    body: 'We\'ll tell you what\'s broken, what\'s overspent, and what\'s missing — even when it\'s uncomfortable. That\'s what you\'re paying us for.',
+  },
+  {
+    title: 'Experience',
+    body: 'Between us, we\'ve seen what works and what fails across dozens of industries. We bring that pattern recognition to every engagement.',
+  },
+];
+---
+
+<Layout title="About" description="Two senior operators. One firm. No agenda. Meet the team behind Cipher Strategic.">
+
+  <!-- PAGE HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="label">About</span>
+      <h1>Built for clients who<br />want the truth.</h1>
+    </div>
+  </section>
+
+  <!-- FIRM STORY -->
+  <section class="story">
+    <div class="container">
+      <div class="story-grid">
+        <div class="story-label">
+          <span class="label">Our Story</span>
+        </div>
+        <div class="story-body">
+          <p>
+            A cipher is two things: a method for making complexity clear, and a tool for navigation. Both matter here.
+          </p>
+          <p>
+            Cipher Strategic exists to bring clarity to decisions that most businesses find opaque — technology strategy, security posture, vendor selection, infrastructure investment. We've been inside the complexity. We've held the seat at the table when systems failed, when vendors oversold, when budgets were wasted on the wrong bets. We know where the risks hide and where the value is.
+          </p>
+          <p>
+            We built this firm because the market is full of advisors who sell alongside their advice. We don't. We work for you, exclusively — evaluating your options without a stake in which one you choose. That independence is the whole point.
+          </p>
+          <p>
+            We serve businesses that take technology seriously but don't have the in-house depth to navigate it alone. If you want a partner who will tell you the truth about your technology, your risk, and your options — and help you act on it — that's what we're here for.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="team">
+    <div class="container">
+      <span class="label">The Team</span>
+      <div class="team-grid">
+
+        <div class="bio-card">
+          <div class="headshot-placeholder">
+            <span>CR</span>
+          </div>
+          <div class="bio-content">
+            <h2>Cody Rivers</h2>
+            <p class="bio-title">IT Strategy & Technology Consulting</p>
+            <p class="bio-body">
+              Cody has spent 15+ years helping businesses figure out what their technology should actually be doing. His clients have included professional sports teams, manufacturers, nonprofits, and professional services firms — each with different needs, different constraints, and different levels of technical maturity.
+            </p>
+            <p class="bio-body">
+              His work is built around a single question: what technology does this business actually need to succeed? He maps essential functions to strategic IT investment and focuses relentlessly on ROI — not on what's new or what's impressive, but on what works.
+            </p>
+          </div>
+        </div>
+
+        <div class="bio-card">
+          <div class="headshot-placeholder">
+            <span>PG</span>
+          </div>
+          <div class="bio-content">
+            <h2>Patrick Glover</h2>
+            <p class="bio-title">Security Strategy & Executive Advisory</p>
+            <p class="bio-body">
+              Patrick is a seasoned security executive with experience spanning government, insurance, retail, healthcare, and startups. He's been the person making security decisions at the highest level and the person executing them on the ground — which means he understands both what leadership needs to hear and what actually works in practice.
+            </p>
+            <p class="bio-body">
+              He brings both perspectives to every engagement: the strategic view from the executive seat and the technical depth from years of hands-on security work. When he tells you where you're exposed, he's seen it before.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="values">
+    <div class="container">
+      <span class="label">How We Work</span>
+      <div class="values-grid">
+        {values.map(v => (
+          <div class="value-block">
+            <h3>{v.title}</h3>
+            <p>{v.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <span class="label">Work Together</span>
+          <h2>Enough about us.<br />Let's talk about you.</h2>
+        </div>
+        <div class="cta-buttons">
+          <a href="/services" class="btn btn-ghost">View Services</a>
+          <a href="/contact" class="btn">Get in Touch</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    padding: 160px 0 80px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .page-header h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    margin-top: 1rem;
+    max-width: 560px;
+  }
+
+  /* STORY */
+  .story {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .story-grid {
+    display: grid;
+    grid-template-columns: 180px 1fr;
+    gap: 3rem;
+  }
+
+  .story-body p {
+    font-size: 1rem;
+    color: var(--text);
+    line-height: 1.9;
+    max-width: 640px;
+  }
+
+  .story-body p + p {
+    margin-top: 1.25rem;
+  }
+
+  /* TEAM */
+  .team {
+    padding: 5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+
+  .bio-card {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .headshot-placeholder {
+    width: 140px;
+    height: 140px;
+    background: var(--bg-raised);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .headshot-placeholder span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+  }
+
+  .bio-content h2 {
+    font-size: 1.5rem;
+    color: var(--text);
+    margin-bottom: 0.35rem;
+  }
+
+  .bio-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.25rem;
+  }
+
+  .bio-body {
+    font-size: 0.92rem;
+    color: var(--muted);
+    line-height: 1.85;
+    max-width: 580px;
+  }
+
+  .bio-body + .bio-body {
+    margin-top: 1rem;
+  }
+
+  /* VALUES */
+  .values {
+    padding: 5rem 0;
+    background: var(--bg-raised);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 3rem;
+    margin-top: 2.5rem;
+  }
+
+  .value-block h3 {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--accent);
+    display: inline-block;
+  }
+
+  .value-block p {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.8;
+  }
+
+  /* CTA */
+  .cta-strip {
+    padding: 5rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .cta-strip h2 {
+    font-size: 1.75rem;
+    margin-top: 0.5rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 800px) {
+    .story-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .bio-card {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+
+    .values-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .cta-buttons {
+      flex-direction: column;
+    }
+  }
+</style>

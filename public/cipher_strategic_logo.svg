@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 420" width="680" height="420">
+  <!-- Background -->
+  <rect width="680" height="420" rx="16" fill="#181C22"/>
+
+  <!-- C mark — ice white, center 118,210, outer r=92, inner r=46, opening ±32° -->
+  <path d="M 196,161 A 92,92 0 1 0 196,259 L 157,234 A 46,46 0 1 1 157,186 Z" fill="#D8E4EE"/>
+
+  <!-- Compass needle — red north, muted south -->
+  <polygon points="118,168 113,210 123,210" fill="#D93B2E"/>
+  <polygon points="118,250 113,212 123,212" fill="#8A9AAA"/>
+
+  <!-- Pivot -->
+  <circle cx="118" cy="210" r="5.5" fill="#D93B2E"/>
+  <circle cx="118" cy="210" r="2.4" fill="#181C22"/>
+
+  <!-- E/W cardinal ticks -->
+  <line x1="152" y1="210" x2="160" y2="210" stroke="#8A9AAA" stroke-width="1.5" stroke-linecap="round"/>
+  <line x1="84"  y1="210" x2="76"  y2="210" stroke="#8A9AAA" stroke-width="1.5" stroke-linecap="round"/>
+
+  <!-- Vertical divider -->
+  <line x1="236" y1="95" x2="236" y2="328" stroke="#2A3240" stroke-width="0.8"/>
+
+  <!-- Wordmark -->
+  <text x="258" y="200" font-family="Arial, Helvetica Neue, sans-serif" font-size="50" fill="#D8E4EE" font-weight="700" letter-spacing="1">CIPHER</text>
+  <text x="261" y="238" font-family="Arial, Helvetica Neue, sans-serif" font-size="20" fill="#D93B2E" font-weight="400" letter-spacing="9">STRATEGIC</text>
+
+  <!-- Divider line -->
+  <line x1="261" y1="252" x2="635" y2="252" stroke="#2A3240" stroke-width="0.5"/>
+
+  <!-- Tagline -->
+  <text x="261" y="271" font-family="Arial, sans-serif" font-size="9.5" fill="#6A7888" letter-spacing="3.5">TECHNOLOGY · AI · STRATEGY</text>
+
+  <!-- Small mark — bottom right -->
+  <g transform="translate(554,316) scale(0.3)">
+    <path d="M 196,161 A 92,92 0 1 0 196,259 L 157,234 A 46,46 0 1 1 157,186 Z" fill="#D8E4EE"/>
+    <polygon points="118,168 113,210 123,210" fill="#D93B2E"/>
+    <polygon points="118,250 113,212 123,212" fill="#8A9AAA"/>
+    <circle cx="118" cy="210" r="5.5" fill="#D93B2E"/>
+    <circle cx="118" cy="210" r="2.4" fill="#181C22"/>
+    <line x1="152" y1="210" x2="160" y2="210" stroke="#8A9AAA" stroke-width="1.5" stroke-linecap="round"/>
+    <line x1="84"  y1="210" x2="76"  y2="210" stroke="#8A9AAA" stroke-width="1.5" stroke-linecap="round"/>
+  </g>
+</svg>

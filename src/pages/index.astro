@@ -1,0 +1,251 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  {
+    label: 'IT Consulting',
+    desc: 'Technology aligned to business outcomes, not IT checkboxes.',
+  },
+  {
+    label: 'Procurement',
+    desc: 'Cisco-certified infrastructure. Right gear, right price.',
+  },
+  {
+    label: 'Advisory',
+    desc: 'Roadmaps and budgets built around where you\'re headed.',
+  },
+  {
+    label: 'Security',
+    desc: 'Honest risk assessment with no monitoring contracts attached.',
+  },
+  {
+    label: 'AI Strategy',
+    desc: 'Where AI creates real leverage in your operations. No hype.',
+  },
+];
+---
+
+<Layout title="Home" description="Cipher Strategic — strategic technology and security advisors for businesses who want honest advice, not vendors.">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <span class="label">Cipher Strategic</span>
+      <h1>Strategic Technology<br />&amp; Security Advisors.</h1>
+      <p class="subhead">
+        Honest advice. No agenda. No vendor relationships.<br />
+        Built for businesses that want clarity, not a sales pitch.
+      </p>
+      <a href="/contact" class="btn">Work With Us</a>
+    </div>
+  </section>
+
+  <!-- SERVICE TEASERS -->
+  <section class="teasers">
+    <div class="container">
+      <span class="label">What We Do</span>
+      <div class="teaser-grid">
+        {services.map(s => (
+          <a href="/services" class="teaser-card">
+            <div class="teaser-bar"></div>
+            <h3>{s.label}</h3>
+            <p>{s.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- POSITIONING STATEMENT -->
+  <section class="positioning">
+    <div class="container">
+      <span class="label">Who We Are</span>
+      <p class="statement">
+        Most technology advice comes with an agenda. Ours doesn't.
+        We work directly for you — evaluating your technology, your risk,
+        and your options with full independence. No software commissions.
+        No preferred vendors. No monitoring contracts. Just the truth,
+        and a plan to act on it.
+      </p>
+      <p class="statement">
+        We serve mid-size businesses, professional services firms, and
+        organizations that take technology seriously but don't have the
+        in-house expertise to navigate it alone.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA STRIP -->
+  <section class="cta-strip">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <span class="label">Ready to Start?</span>
+          <h2>Let's have an honest conversation.</h2>
+        </div>
+        <a href="/contact" class="btn btn-ghost">Let's Talk</a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 0 80px;
+    position: relative;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(204, 51, 34, 0.07) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .hero .container {
+    position: relative;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    color: var(--text);
+    margin: 0 0 1.5rem;
+    max-width: 700px;
+  }
+
+  .subhead {
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    line-height: 1.8;
+  }
+
+  /* TEASERS */
+  .teasers {
+    padding: 6rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 2.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .teaser-card {
+    display: block;
+    padding: 2rem 1.5rem;
+    border-right: 1px solid var(--border);
+    transition: background 0.2s;
+  }
+
+  .teaser-card:last-child {
+    border-right: none;
+  }
+
+  .teaser-card:hover {
+    background: var(--bg-raised);
+  }
+
+  .teaser-card:hover .teaser-bar {
+    background: var(--accent);
+  }
+
+  .teaser-bar {
+    width: 28px;
+    height: 2px;
+    background: var(--border);
+    margin-bottom: 1.25rem;
+    transition: background 0.2s;
+  }
+
+  .teaser-card h3 {
+    font-size: 0.85rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .teaser-card p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+
+  /* POSITIONING */
+  .positioning {
+    padding: 6rem 0;
+    border-top: 1px solid var(--border);
+  }
+
+  .statement {
+    font-size: 1.1rem;
+    color: var(--text);
+    max-width: 680px;
+    line-height: 1.85;
+  }
+
+  .statement + .statement {
+    margin-top: 1.5rem;
+  }
+
+  /* CTA STRIP */
+  .cta-strip {
+    padding: 5rem 0;
+    background: var(--bg-raised);
+    border-top: 1px solid var(--border);
+  }
+
+  .cta-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .cta-strip h2 {
+    font-size: 1.9rem;
+    color: var(--text);
+    margin-top: 0.5rem;
+  }
+
+  @media (max-width: 900px) {
+    .teaser-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .teaser-card {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .teaser-card:nth-child(2n) {
+      border-right: none;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .teaser-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .teaser-card {
+      border-right: none;
+    }
+
+    .cta-inner {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>
