@@ -16,11 +16,11 @@ const services = [
   },
   {
     label: 'Security',
-    desc: 'Honest risk assessment with no monitoring contracts attached.',
+    desc: 'Strategic risk assessment and security counsel, delivered with clarity.',
   },
   {
     label: 'AI Strategy',
-    desc: 'Where AI creates real leverage in your operations. No hype.',
+    desc: 'Where AI creates real leverage in your operations. Practical, not theoretical.',
   },
 ];
 ---
@@ -33,8 +33,8 @@ const services = [
       <span class="label">Cipher Strategic</span>
       <h1>Strategic Technology<br />&amp; Security Advisors.</h1>
       <p class="subhead">
-        Honest advice. No agenda. No vendor relationships.<br />
-        Built for businesses that want clarity, not a sales pitch.
+        Strategic technology and security guidance,<br />
+        built around your business goals.
       </p>
       <a href="/contact" class="btn">Work With Us</a>
     </div>
@@ -61,11 +61,10 @@ const services = [
     <div class="container">
       <span class="label">Who We Are</span>
       <p class="statement">
-        Most technology advice comes with an agenda. Ours doesn't.
         We work directly for you — evaluating your technology, your risk,
-        and your options with full independence. No software commissions.
-        No preferred vendors. No monitoring contracts. Just the truth,
-        and a plan to act on it.
+        and your options with full independence. Our recommendations are
+        built around your outcomes, your budget, and where your business
+        is headed.
       </p>
       <p class="statement">
         We serve mid-size businesses, professional services firms, and
@@ -112,19 +111,28 @@ const services = [
     position: relative;
   }
 
+  .hero .label {
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1.75rem;
+  }
+
   .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
     color: var(--text);
-    margin: 0 0 1.5rem;
-    max-width: 700px;
+    margin: 0 0 2rem;
+    max-width: 100%;
+    font-weight: 700;
+    letter-spacing: 0.01em;
   }
 
   .subhead {
-    font-size: 1.05rem;
+    font-size: 0.88rem;
     color: var(--muted);
-    margin-bottom: 2.5rem;
-    max-width: 520px;
-    line-height: 1.8;
+    margin-bottom: 2.75rem;
+    max-width: 480px;
+    line-height: 2;
+    letter-spacing: 0.02em;
   }
 
   /* TEASERS */
